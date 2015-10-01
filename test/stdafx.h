@@ -10,6 +10,4 @@
 #include <stdio.h>
 #include <tchar.h>
 
-#include "JwPack.h"
-
 // TODO: reference additional headers your program requires here

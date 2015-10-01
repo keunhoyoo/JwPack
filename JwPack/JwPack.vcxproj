@@ -39,7 +39,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup>
+    <NuGetPackageImportStamp>9edbec8b</NuGetPackageImportStamp>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -47,6 +49,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -62,6 +65,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -71,21 +75,38 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\CrtDbgLeak.h" />
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\JwPack.h" />
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\stdafx.h" />
+    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\Align.h" />
+    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\CrtDbgLeak.h" />
+    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\ErrDesc.h" />
+    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\JwPack.h" />
+    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\Mutex.h" />
+    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\NonCopyable.h" />
+    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\Say.h" />
+    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\SingleTon.h" />
+    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\SyncLock.h" />
     <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\src\ErrDesc.cpp" />
+    <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\src\Mutex.cpp" />
+    <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\src\Say.cpp" />
     <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\packages.config" />
+    <None Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\test\test.vcxproj.filters" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\boost.1.59.0.0\build\native\boost.targets" Condition="Exists('packages\boost.1.59.0.0\build\native\boost.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\boost.1.59.0.0\build\native\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\boost.1.59.0.0\build\native\boost.targets'))" />
+  </Target>
 </Project>

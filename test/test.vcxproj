@@ -38,7 +38,9 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Label="UserMacros">
+    <NuGetPackageImportStamp>90777803</NuGetPackageImportStamp>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
@@ -85,6 +87,7 @@
     <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\test\targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\test\crashrpt.cpp" />
     <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\test\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
@@ -96,7 +99,22 @@
       <Project>{afa842ba-b77f-4a9f-afa2-d07c3f8b0a35}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\packages\tbb.4.2.3.1\build\native\tbb.targets" />
+    <None Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\test\packages.config" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\JwPack\packages\CrashRpt.CPP.2.0.16.0\build\native\CrashRpt.CPP.targets" Condition="Exists('..\JwPack\packages\CrashRpt.CPP.2.0.16.0\build\native\CrashRpt.CPP.targets')" />
+    <Import Project="..\JwPack\packages\tbb.redist.4.2.3.1\build\native\tbb.redist.targets" Condition="Exists('..\JwPack\packages\tbb.redist.4.2.3.1\build\native\tbb.redist.targets')" />
+    <Import Project="..\JwPack\packages\tbb.4.2.3.1\build\native\tbb.targets" Condition="Exists('..\JwPack\packages\tbb.4.2.3.1\build\native\tbb.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\JwPack\packages\CrashRpt.CPP.2.0.16.0\build\native\CrashRpt.CPP.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\JwPack\packages\CrashRpt.CPP.2.0.16.0\build\native\CrashRpt.CPP.targets'))" />
+    <Error Condition="!Exists('..\JwPack\packages\tbb.redist.4.2.3.1\build\native\tbb.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\JwPack\packages\tbb.redist.4.2.3.1\build\native\tbb.redist.targets'))" />
+    <Error Condition="!Exists('..\JwPack\packages\tbb.4.2.3.1\build\native\tbb.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\JwPack\packages\tbb.4.2.3.1\build\native\tbb.targets'))" />
+  </Target>
 </Project>

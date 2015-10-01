@@ -32,5 +32,12 @@
     <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\test\test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\test\crashrpt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\test\packages.config" />
+    <None Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\packages\tbb.4.2.3.1\build\native\tbb.targets" />
   </ItemGroup>
 </Project>

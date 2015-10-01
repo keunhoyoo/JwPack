@@ -3,19 +3,40 @@
 
 #include "stdafx.h"
 
+#include "../JwPack/include/Align.h"
+#include "../JwPack/include/ErrDesc.h"
+
+#include <conio.h>
+
+void AlignTest()
+{
+	int i = 13205298;
+	JwPack::Align::RoundDown(i, 234);
+	ASSERT(i % 234 == 0);
+
+	i = 138;
+	JwPack::Align::RoundUp(i, 4);
+	ASSERT(i % 4 == 0);
+}
+
+void ErrDescTest()
+{
+	auto ed = JwPack::ErrDesc::GetInstance();
+
+	wprintf(L"Win32 error 2 => %s \n", ed->GetWin32ErrorMsg(2));
+	wprintf(L"DShow error 0x80070004 => %s \n", ed->GetDShowErrorMsg(0x80070004));
+	wprintf(L"HRESULT error 0x8007000e => %s \n", ed->GetHResultErrorMsg(0x8007000e));
+	wprintf(L"errno error -3 => %s \n", ed->GeterrnoMsg(-3));
+}
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	
-	int** pp = new int*[2];
+	*((int*)0) = 0;
 
-	for (int i = 0; i < 2; i++)
-		pp[i] = new int[10];
+	setlocale(LC_ALL, "");
 
-	for (int i = 0; i < 2; i++)
-		delete[] pp[i];
-
-	//delete pp;
+	AlignTest();
+	ErrDescTest();
 
 	return 0;
 }
