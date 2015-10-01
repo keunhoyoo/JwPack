@@ -41,6 +41,9 @@
     <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\Mutex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\StopWatch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\stdafx.cpp">
@@ -55,9 +58,11 @@
     <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\src\Mutex.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\src\StopWatch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\test\test.vcxproj.filters" />
-    <None Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\packages.config" />
   </ItemGroup>
 </Project>

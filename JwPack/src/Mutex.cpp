@@ -1,24 +1,38 @@
 #include "stdafx.h"
 #include "Mutex.h"
+#include "StopWatch.h"
 #include <mutex>
 
 Mutex::Mutex()
 {
-	m_locker = CreateMutex(nullptr, false, nullptr);
+	std::mutex* mtx = new std::mutex();
+	m_locker = mtx;
+}
+
+Mutex::~Mutex()
+{
+	delete ((std::mutex*)m_locker);
 }
 
 void Mutex::Lock()
 {
-	WaitForSingleObject(m_locker, INFINITE);
+	((std::mutex*)m_locker)->lock();
 }
 
 bool Mutex::Lock(const int ms)
 {
-	DWORD ret = WaitForSingleObject(m_locker, ms);
-	return ret == WAIT_OBJECT_0;
+	JwPack::StopWatch sw;
+	while (((std::mutex*)m_locker)->try_lock() == false)
+	{
+		if (sw.Elapsed<>() > ms)
+			return false;
+		Sleep(1);
+	}
+
+	return true;
 }
 
 void Mutex::Unlock()
 {
-	ReleaseMutex(m_locker);
+	((std::mutex*)m_locker)->unlock();
 }

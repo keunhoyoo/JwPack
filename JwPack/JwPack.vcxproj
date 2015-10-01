@@ -40,7 +40,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <NuGetPackageImportStamp>9edbec8b</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>4428c6a9</NuGetPackageImportStamp>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -83,6 +83,7 @@
     <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\NonCopyable.h" />
     <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\Say.h" />
     <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\SingleTon.h" />
+    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\StopWatch.h" />
     <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\SyncLock.h" />
     <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\targetver.h" />
   </ItemGroup>
@@ -90,23 +91,15 @@
     <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\src\ErrDesc.cpp" />
     <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\src\Mutex.cpp" />
     <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\src\Say.cpp" />
+    <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\src\StopWatch.cpp" />
     <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\packages.config" />
     <None Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\test\test.vcxproj.filters" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-    <Import Project="packages\boost.1.59.0.0\build\native\boost.targets" Condition="Exists('packages\boost.1.59.0.0\build\native\boost.targets')" />
-  </ImportGroup>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('packages\boost.1.59.0.0\build\native\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\boost.1.59.0.0\build\native\boost.targets'))" />
-  </Target>
+  <ImportGroup Label="ExtensionTargets" />
 </Project>

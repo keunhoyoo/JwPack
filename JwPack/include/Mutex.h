@@ -1,6 +1,7 @@
 #pragma once
 
 typedef void* SyncLock;
+
 class ThreadLock
 {
 public:
@@ -16,6 +17,7 @@ class Mutex : public ThreadLock
 {
 public:
 	Mutex();
+	virtual ~Mutex();
 
 	virtual void Lock();
 	virtual bool Lock(const int ms);

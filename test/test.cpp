@@ -5,6 +5,7 @@
 
 #include "../JwPack/include/Align.h"
 #include "../JwPack/include/ErrDesc.h"
+#include "../JwPack/include/StopWatch.h"
 
 #include <conio.h>
 
@@ -29,14 +30,33 @@ void ErrDescTest()
 	wprintf(L"errno error -3 => %s \n", ed->GeterrnoMsg(-3));
 }
 
+void StopWatchTest()
+{
+	JwPack::StopWatch sw;
+
+	sw.Reset();
+	Sleep(300);
+	printf("300ms sleep : %I64d ms \n", sw.Elapsed());
+
+	sw.Reset();
+	Sleep(1000);
+	printf("1000ms sleep : %I64d ms \n", sw.Elapsed());
+
+	sw.Reset();
+	Sleep(1000);
+	printf("1000ms sleep : %I64d s \n", sw.Elapsed<JwPack::StopWatch::Second>());
+}
+
 int _tmain(int argc, _TCHAR* argv[])
 {
-	*((int*)0) = 0;
+	//*((int*)0) = 0;
 
 	setlocale(LC_ALL, "");
 
 	AlignTest();
 	ErrDescTest();
+
+	StopWatchTest();
 
 	return 0;
 }
