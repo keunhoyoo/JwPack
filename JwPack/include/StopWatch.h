@@ -26,12 +26,12 @@ namespace JwPack
 
 		void Reset();
 
-		class NanoSecond { public: static unsigned __int64 s; };
-		class MicroSecond { public: static unsigned __int64 s; };
-		class MilliSecond { public: static unsigned __int64 s; };
-		class Second { public: static unsigned __int64 s; };
+		struct NanoSecond;
+		struct MicroSecond;
+		struct MilliSecond;
+		struct Second;
 
-		template<class T = MilliSecond>
+		template<typename Unit = MilliSecond>
 		unsigned __int64 Elapsed();
 
 	private:

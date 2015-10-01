@@ -11,7 +11,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\test\test.vcxproj.filters" />
+    <None Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\test\test.vcxproj.filters" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

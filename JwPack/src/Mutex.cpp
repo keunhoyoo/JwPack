@@ -3,26 +3,25 @@
 #include "StopWatch.h"
 #include <mutex>
 
-Mutex::Mutex()
+JwPack::Mutex::Mutex()
 {
-	std::mutex* mtx = new std::mutex();
-	m_locker = mtx;
+	m_mtx = new std::mutex();
 }
 
-Mutex::~Mutex()
+JwPack::Mutex::~Mutex()
 {
-	delete ((std::mutex*)m_locker);
+	delete m_mtx;
 }
 
-void Mutex::Lock()
+void JwPack::Mutex::Lock()
 {
-	((std::mutex*)m_locker)->lock();
+	m_mtx->lock();
 }
 
-bool Mutex::Lock(const int ms)
+bool JwPack::Mutex::Lock(const int ms)
 {
 	JwPack::StopWatch sw;
-	while (((std::mutex*)m_locker)->try_lock() == false)
+	while (m_mtx->try_lock() == false)
 	{
 		if (sw.Elapsed<>() > ms)
 			return false;
@@ -32,7 +31,7 @@ bool Mutex::Lock(const int ms)
 	return true;
 }
 
-void Mutex::Unlock()
+void JwPack::Mutex::Unlock()
 {
-	((std::mutex*)m_locker)->unlock();
+	m_mtx->unlock();
 }
