@@ -80,35 +80,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\test\ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\test\stdafx.h" />
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\test\targetver.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\test\crashrpt.cpp" />
-    <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\test\stdafx.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\test\test.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\JwPack\JwPack.vcxproj">
       <Project>{afa842ba-b77f-4a9f-afa2-d07c3f8b0a35}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\packages\tbb.4.2.3.1\build\native\tbb.targets" />
-    <None Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\test\packages.config" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\JwPack\packages\CrashRpt.CPP.2.0.16.0\build\native\CrashRpt.CPP.targets" Condition="Exists('..\JwPack\packages\CrashRpt.CPP.2.0.16.0\build\native\CrashRpt.CPP.targets')" />
-    <Import Project="..\JwPack\packages\tbb.redist.4.2.3.1\build\native\tbb.redist.targets" Condition="Exists('..\JwPack\packages\tbb.redist.4.2.3.1\build\native\tbb.redist.targets')" />
-    <Import Project="..\JwPack\packages\tbb.4.2.3.1\build\native\tbb.targets" Condition="Exists('..\JwPack\packages\tbb.4.2.3.1\build\native\tbb.targets')" />
-  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>

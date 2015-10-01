@@ -11,58 +11,61 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\targetver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\Align.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\CrtDbgLeak.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\ErrDesc.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\JwPack.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\NonCopyable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\Say.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\SingleTon.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\SyncLock.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\Mutex.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\StopWatch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <None Include="..\test\test.vcxproj.filters" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\stdafx.cpp">
+    <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\src\ErrDesc.cpp">
+    <ClCompile Include="src\ErrDesc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\src\Say.cpp">
+    <ClCompile Include="src\Mutex.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\src\Mutex.cpp">
+    <ClCompile Include="src\Say.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\src\StopWatch.cpp">
+    <ClCompile Include="src\StopWatch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\test\test.vcxproj.filters" />
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Align.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\CrtDbgLeak.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ErrDesc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\JwPack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Mutex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\NonCopyable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Say.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SingleTon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\StopWatch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SyncLock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

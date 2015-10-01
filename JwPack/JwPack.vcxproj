@@ -75,30 +75,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\Align.h" />
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\CrtDbgLeak.h" />
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\ErrDesc.h" />
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\JwPack.h" />
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\Mutex.h" />
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\NonCopyable.h" />
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\Say.h" />
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\SingleTon.h" />
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\StopWatch.h" />
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\include\SyncLock.h" />
-    <ClInclude Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\targetver.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\src\ErrDesc.cpp" />
-    <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\src\Mutex.cpp" />
-    <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\src\Say.cpp" />
-    <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\src\StopWatch.cpp" />
-    <ClCompile Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\JwPack\stdafx.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="..\..\..\..\..\minu%27s window\Documents\dev\JwPack\test\test.vcxproj.filters" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ErrDesc.cpp" />
+    <ClCompile Include="src\Mutex.cpp" />
+    <ClCompile Include="src\Say.cpp" />
+    <ClCompile Include="src\StopWatch.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Align.h" />
+    <ClInclude Include="include\CrtDbgLeak.h" />
+    <ClInclude Include="include\ErrDesc.h" />
+    <ClInclude Include="include\JwPack.h" />
+    <ClInclude Include="include\Mutex.h" />
+    <ClInclude Include="include\NonCopyable.h" />
+    <ClInclude Include="include\Say.h" />
+    <ClInclude Include="include\SingleTon.h" />
+    <ClInclude Include="include\StopWatch.h" />
+    <ClInclude Include="include\SyncLock.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
