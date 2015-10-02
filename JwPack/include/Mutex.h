@@ -1,14 +1,15 @@
+/**
+@file
+@author keunho.yoo
+*/
 #pragma once
 #include "JwPack.h"
+#include <mutex>
 
-namespace std
-{
-	class mutex;
-}
 
 namespace JwPack
 {
-	class Mutex : JwPack::NonCopyable
+	class JWPACK_API Mutex : JwPack::NonCopyable
 	{
 	public:
 		Mutex();
@@ -18,7 +19,7 @@ namespace JwPack
 		virtual bool Lock(const int ms);
 		virtual void Unlock();
 
-		std::mutex* m_mtx;
+		std::mutex m_mtx;
 	};
 
 	class ScopeMutex

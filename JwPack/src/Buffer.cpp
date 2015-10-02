@@ -1,12 +1,12 @@
 #include "stdafx.h"
 #include "Buffer.h"
 
-
-Buffer::Buffer()
+JwPack::Buffer::Buffer()
 {
+
 }
 
-
-Buffer::~Buffer()
+JwPack::Buffer::~Buffer()
 {
+
 }

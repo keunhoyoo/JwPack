@@ -7,7 +7,7 @@
 #include "JwPack.h"
 #include <yvals.h> // __FUNCTIONW__
 #include <cstdio>
-#include <stdlib.h>
+#include <cstdlib>
 
 #if defined(_DEBUG)
 #define say_d(x, ...) { JwPack::Say(x, __VA_ARGS__); }

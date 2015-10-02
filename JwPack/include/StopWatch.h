@@ -1,4 +1,10 @@
+/**
+@file
+@author keunho.yoo
+*/
 #pragma once
+#include "JwPack.h"
+#include <chrono>
 
 namespace JwPack
 {
@@ -15,10 +21,10 @@ namespace JwPack
 
 	sw.Reset();
 	Sleep(1000);
-	printf("1000ms sleep : %I64d s \n", sw.Elapsed(JwPack::StopWatch::Second));
+	printf("1000ms sleep : %I64d s \n", sw.Elapsed<JwPack::StopWatch::Second>());
 	*/
 
-	class StopWatch
+	class JWPACK_API StopWatch
 	{
 	public:
 		StopWatch();
@@ -26,16 +32,32 @@ namespace JwPack
 
 		void Reset();
 
-		struct NanoSecond;
-		struct MicroSecond;
-		struct MilliSecond;
-		struct Second;
+		struct NanoSecond
+		{
+			static const unsigned __int64 TimeScale = 1LL;
+		};
+		struct MicroSecond
+		{
+			static const unsigned __int64 TimeScale = 1000LL;
+		};
+		struct MilliSecond
+		{
+			static const unsigned __int64 TimeScale = 1000000LL;
+		};
+		struct Second
+		{
+			static const unsigned __int64 TimeScale = 1000000000LL;
+		};
 
 		template<typename Unit = MilliSecond>
-		unsigned __int64 Elapsed();
+		unsigned __int64 Elapsed()
+		{
+			return (std::chrono::system_clock::now() - m_tp).count() / Unit::TimeScale;
+		}
+
 
 	private:
-		void* m_tp;
+		std::chrono::time_point<std::chrono::system_clock, std::chrono::duration<__int64, std::nano>> m_tp;
 	};
 }
 

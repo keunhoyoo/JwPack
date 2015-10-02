@@ -29,6 +29,9 @@
     <ClCompile Include="src\StopWatch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Buffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -64,7 +67,7 @@
     <ClInclude Include="include\StopWatch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\SyncLock.h">
+    <ClInclude Include="include\Buffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
