@@ -20,6 +20,4 @@
 #define ASSERT(x) assert(x)
 #endif
 
-
-
 #include "NonCopyable.h"

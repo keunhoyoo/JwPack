@@ -39,7 +39,7 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros">
-    <NuGetPackageImportStamp>90777803</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>54d1cb7c</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -49,7 +49,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>Create</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -94,12 +94,4 @@
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\JwPack\packages\CrashRpt.CPP.2.0.16.0\build\native\CrashRpt.CPP.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\JwPack\packages\CrashRpt.CPP.2.0.16.0\build\native\CrashRpt.CPP.targets'))" />
-    <Error Condition="!Exists('..\JwPack\packages\tbb.redist.4.2.3.1\build\native\tbb.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\JwPack\packages\tbb.redist.4.2.3.1\build\native\tbb.redist.targets'))" />
-    <Error Condition="!Exists('..\JwPack\packages\tbb.4.2.3.1\build\native\tbb.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\JwPack\packages\tbb.4.2.3.1\build\native\tbb.targets'))" />
-  </Target>
 </Project>

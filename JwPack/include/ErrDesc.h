@@ -19,7 +19,7 @@ namespace JwPack
 	wprintf(L"errno error -3 => %s \n", ed->GeterrnoMsg(-3));	
 	*/
 
-	class ErrDesc : public SingleTon<ErrDesc>
+	class JWPACK_API ErrDesc : public SingleTon<ErrDesc>
 	{
 	public:
 		const wchar_t* GetWin32ErrorMsg(const unsigned long error_code);

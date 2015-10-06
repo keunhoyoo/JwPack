@@ -6,6 +6,7 @@
 #include "../JwPack/include/Align.h"
 #include "../JwPack/include/ErrDesc.h"
 #include "../JwPack/include/StopWatch.h"
+#include "../JwPack/include/Mutex.h"
 
 #include <conio.h>
 
@@ -30,9 +31,20 @@ void ErrDescTest()
 	wprintf(L"errno error -3 => %s \n", ed->GeterrnoMsg(-3));
 }
 
+void MutexTest()
+{
+	JwPack::Mutex mtx;
+
+	{
+		JwPack::ScopeMutex sm(&mtx);
+	}
+
+}
+
 void StopWatchTest()
 {
 	JwPack::StopWatch sw;
+
 
 	sw.Reset();
 	Sleep(300);

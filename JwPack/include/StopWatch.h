@@ -55,7 +55,6 @@ namespace JwPack
 			return (std::chrono::system_clock::now() - m_tp).count() / Unit::TimeScale;
 		}
 
-
 	private:
 		std::chrono::time_point<std::chrono::system_clock, std::chrono::duration<__int64, std::nano>> m_tp;
 	};
