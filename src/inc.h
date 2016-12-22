@@ -11,4 +11,17 @@
 #include <string>
 #include <memory>
 
+#include <thread>
+#include <mutex>
+#include <condition_variable>
+
+#ifdef __MINGW__
+#include "mingw.condition_variable.h"
+#include "mingw.thread.h"
+#include "mingw.mutex.h"
+#else
+
+#endif
+
+
 #endif //JWPACK_INC_H

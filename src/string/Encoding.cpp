@@ -13,5 +13,11 @@ std::string jwpack::string::Encoding::W2UTF8(const wchar_t* wstr)
 }
 std::string jwpack::string::Encoding::W2A(const wchar_t* wstr)
 {
-    return W2UTF8(wstr);
+    //return W2UTF8(wstr);
+    const size_t s = wcslen(wstr)+1;
+    char* str_buffer = new char[s];
+    wcstombs(str_buffer, wstr, s);
+    std::string str(str_buffer);
+    delete[] str_buffer;
+    return str;
 }
